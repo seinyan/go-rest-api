@@ -1,3 +1,12 @@
+.PHONY: docs
+docs:
+	./scripts/make_swager_docs.sh
+
+.PHONY: gitpush
+gitpush:
+	./scripts/git_push.sh
+
+
 .PHONY: build
 build:
 	go build -v ./cmd/bot
@@ -8,7 +17,6 @@ test:
 
 .PHONY: dev
 dev:
-	go run ./cmd/bot
-
+	go run main.go
 
 .DEFAULT_GOAL := build

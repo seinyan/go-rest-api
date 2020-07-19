@@ -1,0 +1,26 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /register                 --> github.com/seinyan/go-rest-api/controller.SecurityController.Register-fm (3 handlers)
+[GIN-debug] POST   /login                    --> github.com/seinyan/go-rest-api/controller.SecurityController.Login-fm (3 handlers)
+[GIN-debug] GET    /users                    --> github.com/seinyan/go-rest-api/controller.UserController.List-fm (4 handlers)
+[GIN-debug] GET    /users/:id                --> github.com/seinyan/go-rest-api/controller.UserController.Get-fm (4 handlers)
+[GIN-debug] POST   /users                    --> github.com/seinyan/go-rest-api/controller.UserController.Create-fm (4 handlers)
+[GIN-debug] PUT    /users/:id                --> github.com/seinyan/go-rest-api/controller.UserController.Update-fm (4 handlers)
+[GIN-debug] DELETE /users/:id                --> github.com/seinyan/go-rest-api/controller.UserController.Delete-fm (4 handlers)
+[GIN-debug] GET    /                         --> main.main.func1 (3 handlers)
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on 0.0.0.0:9000
+[GIN] 2020/07/19 - 16:48:08 | 401 |     227.966µs |       127.0.0.1 | GET      "/users"
+[GIN] 2020/07/19 - 16:48:08 | 401 |      94.959µs |       127.0.0.1 | GET      "/users"
+[GIN] 2020/07/19 - 16:48:08 | 401 |      93.521µs |       127.0.0.1 | GET      "/users"
+[GIN] 2020/07/19 - 18:27:36 | 200 |     354.725µs |       127.0.0.1 | GET      "/swagger/index.html"
+[GIN] 2020/07/19 - 18:27:36 | 200 |     781.128µs |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js"
+[GIN] 2020/07/19 - 18:27:36 | 200 |      343.73µs |       127.0.0.1 | GET      "/swagger/swagger-ui.css"
+[GIN] 2020/07/19 - 18:27:36 | 200 |    1.379907ms |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js"
+[GIN] 2020/07/19 - 18:27:36 | 200 |      56.192µs |       127.0.0.1 | GET      "/swagger/swagger-ui.css.map"
+[GIN] 2020/07/19 - 18:27:37 | 200 |     987.799µs |       127.0.0.1 | GET      "/swagger/doc.json"
+[GIN] 2020/07/19 - 18:27:37 | 200 |     5.99455ms |       127.0.0.1 | GET      "/swagger/favicon-32x32.png"
+[GIN] 2020/07/19 - 18:27:37 | 200 |    1.321301ms |       127.0.0.1 | GET      "/swagger/swagger-ui-standalone-preset.js.map"
+[GIN] 2020/07/19 - 18:27:37 | 200 |   25.864852ms |       127.0.0.1 | GET      "/swagger/swagger-ui-bundle.js.map"

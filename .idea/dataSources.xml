@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="robot_auto_db@localhost" uuid="7c638144-a39b-4d47-b0d6-b388ce8d09a7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/robot_auto_db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="go_test@localhost" uuid="005c7bf5-92f4-4f75-a365-a1f15026abf9">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/go_test</jdbc-url>
+    </data-source>
+  </component>
+</project>
