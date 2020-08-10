@@ -1,4 +1,5 @@
-package main
+package api
+
 
 import (
 	"fmt"
@@ -22,6 +23,14 @@ import (
 	"strings"
 )
 
+type Server interface {
+	Start()
+}
+
+type server struct {}
+
+
+
 func setupLogOutput()  {
 	f, _ := os.Create("gin.log")
 	gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
@@ -42,8 +51,13 @@ func setupLogOutput()  {
 // @securityDefinitions.apikey bearerAuth
 // @in header
 // @name Authorization
-func main() {
+func (s server) Start() {
 	//setupLogOutput()
+
+	fmt.Println("=====================")
+	fmt.Println("======= CMD START =======")
+	fmt.Println("=====================")
+
 	c, err:= configs.NewConfig()
 	if err != nil {
 		log.Fatal(err)
@@ -96,7 +110,7 @@ func main() {
 		v1.DELETE(":id", userController.Delete)
 	}
 
-	
+
 	// Redirect to docs page
 	server.GET("/", func(ctx *gin.Context) {
 		ctx.Redirect(http.StatusMovedPermanently,  "/swagger/index.html")
@@ -110,3 +124,8 @@ func main() {
 	server.Run(c.HTTP.Host+":"+c.HTTP.Port)
 	defer DBConn.Close()
 }
+
+func NewServer() Server {
+	return &server{}
+}
+

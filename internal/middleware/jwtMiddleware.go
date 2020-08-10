@@ -2,12 +2,12 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/seinyan/go-rest-api/service"
+	"github.com/seinyan/go-rest-api/internal/service"
 	"net/http"
 	"strings"
 )
 
-func JWTAuthMiddleware(jwtServ service.JWTService) gin.HandlerFunc {
+func JWTAuthMiddleware(securityService service.SecurityService) gin.HandlerFunc {
 	return func(c *gin.Context) {
 
 		const BearerSchema = "Bearer"
@@ -38,7 +38,7 @@ func JWTAuthMiddleware(jwtServ service.JWTService) gin.HandlerFunc {
 			return
 		}
 
-		token, err := jwtServ.ValidateToken(parts[1])
+		token, err := securityService.ValidateToken(parts[1])
 		if err != nil {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{
 				"error": err.Error(),

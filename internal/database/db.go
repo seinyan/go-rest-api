@@ -24,6 +24,7 @@ func NewDBConn(c configs.Database) (*gorm.DB, error) {
 	conn.DB().SetMaxIdleConns(10)
 	conn.DB().SetMaxOpenConns(100)
 	conn.DB().SetConnMaxLifetime(time.Hour)
+	conn.LogMode(true)
 
 	return conn, nil
 }

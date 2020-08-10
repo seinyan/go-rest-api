@@ -6,17 +6,27 @@ docs:
 gitpush:
 	./scripts/git_push.sh
 
+.PHONY: migrate
+migrate:
+	go run ./cmd/db
+
+
 
 .PHONY: build
 build:
-	go build -v ./cmd/bot
+	go build -v main.go
+
+.PHONY: dev
+dev:
+	go run ./cmd/api
+
+
+
+
 
 .PHONY: test
 test:
 	go test -v -race -timeout 30s ./...
 
-.PHONY: dev
-dev:
-	go run main.go
 
 .DEFAULT_GOAL := build

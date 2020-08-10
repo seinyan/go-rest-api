@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/seinyan/go-rest-api/models"
-	"github.com/seinyan/go-rest-api/repository"
+	"github.com/seinyan/go-rest-api/internal/models"
+	"github.com/seinyan/go-rest-api/internal/repository"
 	"net/http"
 )
 
@@ -33,7 +33,7 @@ func NewUserController(repo repository.UserRepository) UserController {
 // @Router /users [get]
 // @Security bearerAuth
 func (c userController) List(ctx *gin.Context) {
-	var items [] models.User
+	var items []models.User
 	items = append(items, models.User{})
 	ctx.JSON(200, items)
 }
@@ -104,7 +104,7 @@ func (c userController) Create(ctx *gin.Context)  {
 }
 
 // Update godoc
-// @Summary User Create
+// @Summary User Update
 // @Description do ping
 // @Tags Users
 // @Accept  json
@@ -133,8 +133,8 @@ func (c userController) Update(ctx *gin.Context) {
 		return
 	}
 
-	item.Id = id
-	if _, err = c.repo.Get(item.Id); err != nil {
+	item.ID = id
+	if _, err = c.repo.Get(item.ID); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
